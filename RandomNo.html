@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Guess the number!</title>
+  
+    <style>
+        html {
+    font-family: sans-serif;
+    }
+      
+        body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 480px;
+    margin: 0 auto;
+    }
+    </style>
+</head>
+  
+<body>
+<br>
+<br>
+
+<h1>Guess The Number!</h1>
+  
+<h3>Enter the number</h3>
+  
+<div class="form">
+    <label for="guessField"> </label>
+    <input type = "text" id = "guessField" class = "guessField">
+    <input type = "submit" value = "click me" 
+           class = "guessSubmit" id = "submitguess">
+</div>
+  
+<script type = "text/javascript">
+  
+    // random value generated
+    var y = Math.floor(Math.random() * 100 + 1);
+      
+    // counting the number of guesses
+    // made for correct Guess
+    var guess = 1;
+      
+    document.getElementById("submitguess").onclick = function(){
+      
+   // number guessed by user     
+   var x = document.getElementById("guessField").value;
+  
+   if(x == y)
+   {    
+       alert("CONGRATULATIONS!!!" );
+   }
+   else if(x > y) /* if guessed number is greater
+                   than actual number*/ 
+   {    
+       guess++;
+       if (guess >= 6){
+        alert("Game Over")
+       }
+       else{
+       alert("OOPS SORRY!! your guessing is too low, you have " + (6 - guess) + "left.");
+       }
+
+   }
+   else
+   {
+       guess++;
+       if (guess >= 6){
+        alert("Game Over")
+       }
+      
+      else{
+       alert("OOPS SORRY!! your guessing is too high,you have "+(6-guess)+"left.");
+       }   
+    }  
+}
+</script>
+</body>
+</html
